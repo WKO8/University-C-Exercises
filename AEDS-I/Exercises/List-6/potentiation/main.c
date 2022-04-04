@@ -9,7 +9,7 @@ int main()
 {
     // Declaring the variables
     float base,
-          result;
+          result = 1;
     int exponent;
     bool ERROR;
 
@@ -28,8 +28,8 @@ int main()
     } while (ERROR);
 
     // Loop to get the result of the potentiation
-    for (int i = 1; i < exponent; i++) {
-        result += base * base;
+    for (int i = 1; i <= exponent; i++) {
+        result *= base;
     }
 
     // Output Message
