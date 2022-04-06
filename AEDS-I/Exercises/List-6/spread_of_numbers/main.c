@@ -13,38 +13,51 @@ int main()
         min,
         terms = 0,
         spread = 0;
+    char repeat;
     bool ERROR;
     
-    // Initial Message
-    printf("\n-- Amplitude de um conjunto de números --");
-
-    // Loop to get all the set of numbers
+    // Loop to repeat the program
     do {
-        printf("\nNúmero (0 = parar): ");
-        scanf(" %d", &num);
-        ERROR = num < 0;
-        // Conditions for checking error, none value and valid value
-        if (num == 0 && terms == 0) {
-            printf("\nNenhum valor informado.");
-            printf("\n\nPrograma finalizado com sucesso.\n\n");
-            exit(1);
-        } else if (num == 0 && terms > 0) {
-            break;
-        } else if (ERROR) {
-            printf("\nValor inválido, tente novamente.\n");
-        } else {
-            if (num > max) max = num;
-            else if (num < min) min = num;
+        // Initial Message
+        printf("\n-- Amplitude de um conjunto de números --");
 
-            terms++;
-        }
-    } while ((ERROR) || (num != 0));
+        // Loop to get all the set of numbers
+        do {
+            printf("\nNúmero (0 = parar): ");
+            scanf("%d", &num);
+            ERROR = num < 0;
 
-    // Calculating the spread
-    spread = max - min;
+            // Conditions for checking error, none value and valid value
+            if (num == 0 && terms == 0) {
+                printf("\nNenhum valor informado.");
+                printf("\n\nPrograma finalizado com sucesso.\n\n");
+                exit(1);
+            } else if (num == 0 && terms > 0) {
+                break;
+            } else if (ERROR) {
+                printf("\nValor inválido, tente novamente.\n");
+            } else {
+                if (num > max) max = num;
+                else if (num < min) min = num;
 
-    // Output Message
-    printf("\n%d - %d = %d\nO valor da amplitude é igual a %d.", max, min, spread, spread);
+                terms++;
+            }
+        } while (ERROR || (num != 0));
+
+        // Calculating the spread
+        spread = max - min;
+
+        // Output Message
+        printf("\n%d - %d = %d\n\nO valor da amplitude é igual a %d.", max, min, spread, spread);
+
+        // Loop to get a valid input to repeat or not the program
+        do {
+            printf("\n\nDeseja realizar um novo cálculo [S/N]? ");
+            scanf(" %c", &repeat);
+            repeat = toupper(repeat);
+            ERROR = (repeat != 'S') && (repeat != 'N');
+        } while (ERROR);
+    } while (repeat == 'S');
 
     // Final Message
     printf("\n\nPrograma finalizado com sucesso.\n\n");
