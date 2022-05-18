@@ -69,8 +69,6 @@ int requestSecondValue() {
 // greatestCommomDivisor function
 int greatestCommomDivisor(int num1, int num2) {
     // Declaring the variable
-    int res = -1;
-
     while (num2 != 0) {
         return greatestCommomDivisor(num2, num1 % num2);
     }

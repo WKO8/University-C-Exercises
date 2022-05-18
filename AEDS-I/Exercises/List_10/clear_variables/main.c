@@ -8,8 +8,6 @@
 // Prototypes
 void initialMessage();
 void clearVariables(int*, int*);
-float requestFirstValue();
-float requestSecondValue();
 void outputMessage();
 void finalMessage();
 
@@ -30,30 +28,6 @@ int main() {
 // initialMessage function
 void initialMessage() {
     printf("-- Zerar Variáveis --");
-}
-
-// requestFirstValue function
-float requestFirstValue() {
-    // Declaring the variables
-    float num;
-
-    // Getting a real value
-    printf("\nInsira um número real: ");
-    scanf("%f", &num);
-
-    return num;
-}
-
-// requestSecondValue function
-float requestSecondValue() {
-    // Declaring the variables
-    float num;
-
-    // Getting a real value
-    printf("\nInsira mais um número real: ");
-    scanf("%f", &num);
-
-    return num;
 }
 
 // clearVariables function
